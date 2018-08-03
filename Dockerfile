@@ -15,7 +15,7 @@ RUN apt-get update \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean
 
-RUN pip install ansible cryptography
+RUN pip install ansible cryptography urllib3 pyOpenSSL ndg-httpsclient
 
 RUN mkdir -p /etc/ansible \
     && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
